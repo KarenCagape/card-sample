@@ -10,6 +10,7 @@ const RichText = styled.div`
         font-weight: 300;
         font-family: inherit;
         color: ${props => props.theme.colors.black};
+        margin-top: 0;
     }
 `;
 
