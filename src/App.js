@@ -101,8 +101,6 @@ function App() {
           posts.map(post => (
             <Item key={post.id}>
               <Card
-                // flex={{ _:null, sm: null, md: "0 0 33.333333%", lg: null, xl: null }}
-                // maxwidth={{ _: null, sm: null, md: "33.333333%", lg: null, xl: null }}
                 width="33.33333%"
                 thumbnail={post.thumbnail}
                 content={
