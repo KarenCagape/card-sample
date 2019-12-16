@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import styled from "styled-components";
 import { color, typography, space } from "styled-system";
 import { IoIosArrowRoundForward } from "react-icons/io";
@@ -27,8 +28,13 @@ Link.defaultProps = {
   fontSize: 15
 };
 
-export default props => (
-  <Link {...props}>
-    {props.children} <IoIosArrowRoundForward size="1.5em" style={ {verticalAlign: "middle", fontWeight: '500'} } />
+Link.propTypes = {
+  children: PropTypes.node,
+  href: PropTypes.string.isRequired
+}
+
+export default ({ href, children }) => (
+  <Link href={href}>
+    {children} <IoIosArrowRoundForward size="1.5em" style={ {verticalAlign: "middle", fontWeight: '500'} } />
   </Link>
 );

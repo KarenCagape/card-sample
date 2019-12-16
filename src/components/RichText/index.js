@@ -1,4 +1,5 @@
-// import React from 'react';
+// import React from "react";
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { color, typography } from 'styled-system';
 
@@ -19,6 +20,10 @@ RichText.defaultProps = {
     fontFamily: 'default',
     fontWeight: '300',
     fontSize: 16
+}
+
+RichText.propTypes = {
+    children: PropTypes.node.isRequired
 }
 
 export default RichText;

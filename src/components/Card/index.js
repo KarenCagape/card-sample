@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 import Link from "../Link";
 import RichText from "../RichText";
@@ -10,20 +11,26 @@ const CopyWrapper = styled.div`
   padding: 20px;
 `;
 
-
 function Card(props) {
+  const { thumbnail, content, actionLink } = props;
+  
   return (
-    <>
-      <Thumbnail src="https://cdn2.hubspot.net/hub/5713048/hubfs/iStock-482835011-min.jpg?width=650&name=iStock-482835011-min.jpg" />
+    <div>
+      {thumbnail && <Thumbnail image={thumbnail} />}
       <CopyWrapper>
-        <RichText>
-          <h3>Sample title</h3>
-          <p>summary of post shit! shit! shit! shit! shit! shit! shit! shit! shit! shit!</p>
-        </RichText>
-        <Link marginTop={10} src={"google.com"}>Read more</Link>
+        <RichText>{content}</RichText>
+        <Link marginTop={10} href={actionLink}>
+          Read more
+        </Link>
       </CopyWrapper>
-    </>
+    </div>
   );
 }
+
+Card.prototype = {
+  thumbnail: PropTypes.string,
+  content: PropTypes.node.isRequired,
+  actionLink: PropTypes.string.isRequired
+};
 
 export default Card;
