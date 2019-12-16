@@ -99,12 +99,11 @@ function App() {
       <Wrapper>
         {isLoading === false && posts.length ? (
           posts.map(post => (
-            <Item>
+            <Item key={post.id}>
               <Card
                 // flex={{ _:null, sm: null, md: "0 0 33.333333%", lg: null, xl: null }}
                 // maxwidth={{ _: null, sm: null, md: "33.333333%", lg: null, xl: null }}
                 width="33.33333%"
-                key={post.id}
                 thumbnail={post.thumbnail}
                 content={
                   <>
