@@ -73,6 +73,7 @@ function App() {
   const Wrapper = styled.div`
     ${flexbox}
     ${layout}
+    padding-top: 30px;
 
     @media (min-width: ${({theme}) => theme.breakpoints.lg}) {
       display: flex;
@@ -86,6 +87,7 @@ function App() {
     ${flexbox}
     ${layout}
     width: 100%;
+    margin-bottom: 30px;
     @media (min-width: ${({theme}) => theme.breakpoints.lg}) {
       flex: 0 0 33.333333%;
       max-width: 33.3333333%;
